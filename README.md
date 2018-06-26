@@ -19,10 +19,10 @@ software:
 >* sudo apt-get install -y build-essential python-pip python-dev python-smbus git
 >* sudo apt-get install -y python-scipy python-pygame
 >* sudo pip install colour
->* sudo raspi-config,to enable the IIC service.
-    >1. select Advanced options
-    >2. select I2C
-    >3. select yes
+>* sudo raspi-config,to enable the IIC service.  
+    >* select Advanced options
+    >* select I2C
+    >* select yes
 
 Usage  
 =======
