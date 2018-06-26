@@ -20,9 +20,9 @@ software:
 >* sudo apt-get install -y python-scipy python-pygame
 >* sudo pip install colour
 >* sudo raspi-config,to enable the IIC service.  
-    select Advanced options
-    select I2C
-    select yes
+    select Advanced options  
+    select I2C  
+    select yes  
 
 Usage  
 =======
