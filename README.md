@@ -20,9 +20,9 @@ software:
 >* sudo apt-get install -y python-scipy python-pygame
 >* sudo pip install colour
 >* sudo raspi-config,to enable the IIC service.  
-    >* select Advanced options
-    >* select I2C
-    >* select yes
+    select Advanced options
+    select I2C
+    select yes
 
 Usage  
 =======
@@ -30,7 +30,7 @@ Attatch the sensor to raspberry-PI board,Please refer to the schematic of the co
 Test the wiring,type command in cmd line:
 >* sudo i2cdetect -y 1(raspberry-pi 2B use I2C1),if get the correct IIC address,wiring is OK.  
 >* download or  git clone this repository,enter corresponding directory,typing:  
-    >* python thermal_cam.py
+    python thermal_cam.py
 
 
 ***
