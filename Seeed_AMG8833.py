@@ -90,6 +90,15 @@ class AMG8833(object):
         self.clear_status(CLEAR_ALL_STATUS)
         self.reset_flags(INIT_RESET_VALUE)
 
+        #upper_data=[0x80,0x00]
+        #self.set_upper_limit(upper_data)
+
+        #lower_limit=[0x01,0x00]
+        #self.set_lower_limit(lower_limit)
+        
+        #hysteresis=[0x7f,0x00]
+        #self.set_hysteresis(hysteresis)
+
     def set_sensor_mode(self,mode):
         self.device.write8(POWER_CONTROL_REG_ADDR,mode)
     def clear_status(self,value):
@@ -98,6 +107,15 @@ class AMG8833(object):
         self.device.write8(RESET_REG_ADDR,value)
     def set_interrupt_mode(self,mode):
         self.device.write8(INTERRUPT_CONTROL_REG_ADDR,mode)
+    def set_upper_limit(self,data):
+        self.device.write8(INT_LEVEL_REG_ADDR_HL,data[0])
+        self.device.write8(INT_LEVEL_REG_ADDR_HH,data[1])
+    def set_lower_limit(self,data):
+        self.device.write8(INT_LEVEL_REG_ADDR_LL,data[0])
+        self.device.write8(INT_LEVEL_REG_ADDR_LH,data[1])
+    def set_hysteresis(self,data):
+        self.device.write8(INT_LEVEL_REG_ADDR_YSL,data[0])
+        self.device.write8(INT_LEVEL_REG_ADDR_YSH,data[1])
     def read_temp(self):
         buf = []
         for i in range(0, PIXEL_NUM):
